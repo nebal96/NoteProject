@@ -6,11 +6,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
-        android:layout_width="650dp"
-        android:layout_height="709dp"
-        android:layout_marginLeft="-120dp"
-        android:layout_marginTop="-220dp"
-        android:src="@drawable/tutorial2_foreground" />
+        android:layout_width="550dp"
+        android:layout_gravity="center"
+        android:layout_height="600dp"
+        android:layout_marginTop="-200dp"
+        android:src="@drawable/tutorial1_foreground" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,12 +40,14 @@
         android:layout_marginLeft="20dp"
         >
         <TextView
+            android:id="@+id/t1skip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:text="Skip"
             android:textColor="#9B9B9B"/>
         <LinearLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -65,6 +67,7 @@
                 />
         </LinearLayout>
         <Button
+            android:id="@+id/t1next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#fff"

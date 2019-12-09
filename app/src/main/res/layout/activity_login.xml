@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
+            android:id="@+id/signuptv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -21,26 +22,29 @@
             android:layout_height="match_parent"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/closebtn2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/close_foreground"
             android:layout_gravity="end"/>
     </LinearLayout>
     <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome back!
-                  You’ve been missed"
+        android:text="Welcome back! \n You’ve been missed"
         android:textSize="30sp"
         android:textColor="#1A1824"
         android:layout_marginTop="30dp"
         android:textStyle="bold"/>
     <EditText
+        android:id="@+id/emailet2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your email address"
         android:layout_marginTop="50dp"/>
     <EditText
+        android:id="@+id/passet2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your Password"
@@ -50,12 +54,14 @@
         android:layout_height="match_parent"
         android:layout_weight="1"/>
     <TextView
+        android:id="@+id/forgotet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="forget password?"
         android:layout_gravity="center"
         android:layout_marginBottom="30dp"/>
     <Button
+        android:id="@+id/loginbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign in"

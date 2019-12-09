@@ -16,6 +16,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/closebtn3"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/close_foreground"
@@ -40,10 +41,10 @@
         android:textStyle="bold"
         android:layout_gravity="center"/>
     <TextView
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="We’ve sent instructions on how to reset
-                      The password (also check the Spam folder)."
+        android:text="We’ve sent instructions on how to reset \n The password (also check the Spam folder)."
         android:textSize="16sp"
         android:gravity="center"
         android:layout_marginTop="20dp"/>
@@ -53,6 +54,7 @@
         android:layout_weight="1"/>
 
     <Button
+        android:id="@+id/openemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go to Email"
