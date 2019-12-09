@@ -9,9 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".notesappdesign"></activity>
-        <activity android:name=".addbook"></activity>
-        <activity android:name=".notebooks"></activity>
+        <activity android:name=".checkemail"></activity>
+        <activity android:name=".forgotpassword" />
+        <activity android:name=".login" />
+        <activity android:name=".signup" />
+        <activity android:name=".splash" />
+        <activity android:name=".tutorial2" />
+        <activity android:name=".tutorial1" />
+        <activity android:name=".notesappdesign" />
+        <activity android:name=".addbook" />
+        <activity android:name=".notebooks" />
         <activity android:name=".search" />
         <activity android:name=".MainActivity">
             <intent-filter>
