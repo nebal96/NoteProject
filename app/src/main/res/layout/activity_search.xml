@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:layout_marginTop="20dp"
+    android:background="#A6FFFFFF">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="#7B1E58"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textColor="#7B1E58"
+            android:textSize="17sp"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:textColor="#090005"
+        android:textSize="34sp"
+        android:paddingTop="20sp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="10dp"
+            android:layout_height="wrap_content"
+            android:background="#DEDEE6"
+            android:padding="5dp"
+            android:text="Search"
+            android:drawableLeft="@drawable/search1_foreground"
+            android:drawablePadding="10dp"/>
+
+
+    <ImageView
+        android:layout_width="109dp"
+        android:layout_height="120dp"
+        android:src="@drawable/notes_foreground"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let’s create a Note together"
+        android:textColor="#9B9B9B"
+        android:textSize="18sp"
+        android:paddingTop="0dp"
+        android:layout_marginTop="50sp"
+        android:gravity="center"
+        android:paddingBottom="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="#7B1E58"
+        android:layout_gravity="right"/>
+
+</LinearLayout>
