@@ -16,6 +16,13 @@ public class splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
+        if (isFirstRun) {
+            startActivity(new Intent(splash.this, tutorial1.class));
+        }
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).commit();
         splashlogin = findViewById(R.id.splashlogin);
         splashsignup= findViewById(R.id.splashsignup);
         splashlogin.setOnClickListener(new View.OnClickListener() {
