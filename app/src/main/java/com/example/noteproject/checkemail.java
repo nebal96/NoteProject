@@ -35,7 +35,7 @@ public class checkemail extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_MAIN);
                 PackageManager managerclock = getPackageManager();
-                i = managerclock.getLaunchIntentForPackage("com.gmail");
+                i = managerclock.getLaunchIntentForPackage("com.google.android.gm");
                 i.addCategory(Intent.CATEGORY_LAUNCHER);
                 startActivity(i);
             }
