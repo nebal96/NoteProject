@@ -8,6 +8,7 @@
     android:layout_gravity="center_vertical"
     android:background="#A6FFFFFF">
     <TextView
+        android:id="@+id/cancelAddNotebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="cancel"
@@ -31,6 +32,7 @@
             android:layout_gravity="center_horizontal"/>
 
         <EditText
+            android:id="@+id/addNotebookEt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -42,6 +44,7 @@
             />
 
         <Button
+            android:id="@+id/addNotebookBtn"
             android:layout_width="98dp"
             android:layout_height="29dp"
             android:background="#7B1E58"
