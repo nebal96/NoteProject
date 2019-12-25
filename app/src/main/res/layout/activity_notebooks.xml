@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_marginLeft="16dp"
     android:background="#A6FFFFFF">
 
     <ImageView
+        android:id="@+id/backarrownotebook"
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:layout_gravity="start"
@@ -41,107 +42,11 @@
         app:flexWrap="wrap"
         app:alignItems="stretch"
         app:alignContent="stretch" >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notebook_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-
-                android:src="@drawable/book_foreground" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My Links"
-                android:textColor="#000"
-                android:textSize="11sp"
-                android:layout_gravity="center"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-
-                android:src="@drawable/book_foreground" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My Links"
-                android:textColor="#000"
-                android:textSize="11sp"
-                android:layout_gravity="center"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-
-                android:src="@drawable/book_foreground" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My Links"
-                android:textColor="#000"
-                android:textSize="11sp"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-
-                android:src="@drawable/book_foreground" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My Links"
-                android:textColor="#000"
-                android:textSize="11sp"
-                android:layout_gravity="center"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:src="@drawable/book_foreground" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My Links"
-                android:textColor="#000"
-                android:textSize="11sp"
-                android:layout_gravity="center"/>
-        </LinearLayout>
 
     </com.google.android.flexbox.FlexboxLayout>
 

@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     List<Note> noteList = new ArrayList<>();
     List<NoteBook> notebookList = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(MainActivity.this , splash.class);
+                Intent intent = new Intent(MainActivity.this ,splash.class);
+                finishAffinity();
                 startActivity(intent);
             }
         });
@@ -63,16 +65,36 @@ public class MainActivity extends AppCompatActivity {
         notesAdapter = new NotesAdapter(this ,noteList );
         notes_rv.setAdapter(notesAdapter);
 
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String uid = user.getUid();
+        FirebaseDatabase.getInstance().getReference().child("User").child(uid).child("Notebooks")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        notebookList.clear();
+                        for(DataSnapshot snapshot: dataSnapshot.getChildren() ){
+                            NoteBook notebook = snapshot.getValue(NoteBook.class);
+                            notebookList.add(notebook);
+                        }
+                        notebookAdapter.notifyDataSetChanged();
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
+                });
+
         notebooks_rv = findViewById(R.id.notebooks_rv);
         notebooks_rv.setLayoutManager(new LinearLayoutManager(this));
         notebookAdapter = new NotebookAdapter(this ,notebookList );
         notebooks_rv.setAdapter(notebookAdapter);
-
         LinearLayoutManager linearLayoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.notebooks_rv);
         recyclerView.setLayoutManager(linearLayoutManager);
+
+
+
 
 
     }
