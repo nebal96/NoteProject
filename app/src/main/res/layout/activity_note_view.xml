@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageView
-            android:id="@+id/backarrownote1"
+            android:id="@+id/backarrownote"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="10dp"
             android:layout_gravity="start"
-            android:src="@drawable/back_foreground"
+            android:src="@drawable/arrowdetail_foreground"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -48,15 +48,14 @@
 
 
 
-
         <EditText
             android:id="@+id/noteTitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Note Title"
             android:textColor="#fff"
-            android:textStyle="bold"
-            android:textSize="22sp"
+
+            android:textSize="18sp"
             android:layout_marginLeft="10dp"
             />
 

@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class forgotpassword extends AppCompatActivity {
-    EditText forgotet ;
+    EditText forgotEmail ;
     ImageView back;
     Button forgotbtn;
     FirebaseAuth mAuth;
@@ -27,12 +27,11 @@ public class forgotpassword extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgotpassword);
-        forgotet = findViewById(R.id.forgotet);
+        forgotEmail = findViewById(R.id.forgotet);
         back = findViewById(R.id.back);
         forgotbtn = findViewById(R.id.forgotbtn);
 
-        mAuth= FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +42,7 @@ public class forgotpassword extends AppCompatActivity {
         forgotbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                forgotpassword.this.doforgotpassword(forgotet.getText().toString());
+                forgotpassword.this.doforgotpassword(forgotEmail.getText().toString());
             }
         });
 

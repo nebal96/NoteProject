@@ -49,8 +49,6 @@
         android:drawableLeft="@drawable/search1_foreground"
         android:drawablePadding="10dp"/>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -78,20 +76,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
-
-
+            android:layout_weight="1" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addnoteBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="763dp"
+
+            android:layout_height="43dp"
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
-            app:srcCompat="@drawable/close_foreground"
+
+
+            app:srcCompat="@drawable/plus4" app:paddingBottom="@dimen/cardview_default_radius"
             tools:ignore="VectorDrawableCompat" />
 
 

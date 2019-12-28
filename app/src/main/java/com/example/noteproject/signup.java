@@ -42,11 +42,11 @@ public class signup extends AppCompatActivity {
 
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-//        if ( user !=null)
-//        {
-//            Intent intent = new Intent(signup.this , MainActivity.class);
-//            startActivity(intent);
-//        }
+        if ( user !=null)
+        {
+            Intent intent = new Intent(signup.this , MainActivity.class);
+            startActivity(intent);
+        }
 
         closebtn = findViewById(R.id.closebtn);
         signtv = findViewById(R.id.signtv);
@@ -78,6 +78,7 @@ public class signup extends AppCompatActivity {
     }
 
     private void doSignUp(String email, String password) {
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
