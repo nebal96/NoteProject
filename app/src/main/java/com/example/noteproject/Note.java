@@ -5,15 +5,27 @@ public class Note {
         String id ;
         String title ;
         String note;
-    long createdAt;
     long lastUpdate;
+    String notebookId;
 
-    public Note(String id, String title, String note, long createdAt, long lastUpdate) {
+    public Note(String id, String title, String note,long lastUpdate,String notebookId) {
         this.id = id;
         this.title = title;
         this.note = note;
-        this.createdAt = createdAt;
         this.lastUpdate = lastUpdate;
+        this.notebookId = notebookId;
+    }
+
+    public Note() {
+
+    }
+
+    public String getNotebookId() {
+        return notebookId;
+    }
+
+    public void setNotebookId(String notebookId) {
+        this.notebookId = notebookId;
     }
 
     public String getId() {
@@ -38,14 +50,6 @@ public class Note {
 
     public void setNote(String note) {
         this.note = note;
-    }
-
-    public long getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(long createdAt) {
-        this.createdAt = createdAt;
     }
 
     public long getLastUpdate() {

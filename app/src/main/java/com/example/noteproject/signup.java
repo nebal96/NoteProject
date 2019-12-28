@@ -87,8 +87,6 @@ public class signup extends AppCompatActivity {
                             String emailF = user.getEmail();
                             String uid = user.getUid();
 
-                            Toast.makeText(signup.this, emailF, Toast.LENGTH_SHORT).show();
-                            Toast.makeText(signup.this, uid, Toast.LENGTH_SHORT).show();
                             Map<String,Object> data = new HashMap<>();
                             data.put("uid",uid);
                             data.put("email",emailF);

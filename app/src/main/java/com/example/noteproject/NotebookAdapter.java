@@ -1,6 +1,7 @@
 package com.example.noteproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,13 +62,9 @@ public class NotebookAdapter extends RecyclerView.Adapter<NotebookAdapter.Notebo
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, notebook.getTitle(), Toast.LENGTH_SHORT).show();
-//                    Intent  intent = new Intent(itemView.getContext() ,NoteActivity.class);
-//                    intent.putExtra("id",note.getId());
-//                    intent.putExtra("title",note.getTitle());
-//                    intent.putExtra("note",note.getNote());
-//                    intent.putExtra("date",note.getDate());
-//                    itemView.getContext().startActivity(intent);
+                    Intent intent = new Intent(itemView.getContext() ,notebooksContent.class);
+                    intent.putExtra("id",notebook.getId());
+                    itemView.getContext().startActivity(intent);
                 }
             });
         }

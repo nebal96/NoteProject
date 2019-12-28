@@ -7,12 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
-
-import com.google.android.flexbox.FlexWrap;
-import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -36,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initData();
+
         findViewById(R.id.signout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        notes_rv = findViewById(R.id.notes_rv);
-        notes_rv.setLayoutManager(new LinearLayoutManager(this));
-        notesAdapter = new NotesAdapter(this ,noteList );
-        notes_rv.setAdapter(notesAdapter);
-
+        findViewById(R.id.showNotes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this , notes.class);
+                startActivity(intent);
+            }
+        });
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
@@ -94,19 +91,32 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
 
+        FirebaseDatabase.getInstance().getReference().child("User").child(uid).child("notes")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        noteList.clear();
+                        for(DataSnapshot snapshot: dataSnapshot.getChildren() ){
+                            Note note = snapshot.getValue(Note.class);
+                            noteList.add(note);
+                        }
+                        notesAdapter.notifyDataSetChanged();
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
+                });
+
+        notes_rv = findViewById(R.id.notes_rv);
+        notes_rv.setLayoutManager(new LinearLayoutManager(this));
+        notesAdapter = new NotesAdapter(this ,noteList );
+        notes_rv.setAdapter(notesAdapter);
+
+
 
 
 
     }
 
-    private void initData() {
-        noteList . add(new Note("1","Note  1 Title" , "note 1 description" , new Date().getTime(),new Date().getTime()));
-        noteList . add(new Note("1","Note  1 Title" , "note 1 description" , new Date().getTime(),new Date().getTime()));
-        noteList . add(new Note("1","Note  1 Title" , "note 1 description" , new Date().getTime(),new Date().getTime()));
-        noteList . add(new Note("1","Note  1 Title" , "note 1 description" , new Date().getTime(),new Date().getTime()));
-        noteList . add(new Note("1","Note  1 Title" , "note 1 description" , new Date().getTime(),new Date().getTime()));
-
-
-    }
 
 }

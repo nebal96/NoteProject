@@ -39,15 +39,14 @@ public class addbook extends AppCompatActivity {
 
 
         findViewById(R.id.addNotebookBtn).setOnClickListener(v -> {
-            NoteBook notebook = new NoteBook();
-            notebook.setTitle(addNotebookEt.getText().toString());
-            notebook.setImage("kkkk");
-            String id = FirebaseDatabase.getInstance().getReference().child("NoteBook").push().getKey();
-            notebook.setId(id);
-            FirebaseDatabase.getInstance().getReference().child("Notebook").child(id).setValue(notebook);
             mAuth = FirebaseAuth.getInstance();
             FirebaseUser user = mAuth.getCurrentUser();
             String uid = user.getUid();
+            NoteBook notebook = new NoteBook();
+            notebook.setTitle(addNotebookEt.getText().toString());
+            notebook.setImage("kkkk");
+            String id = FirebaseDatabase.getInstance().getReference().child("User").child(uid).child("NoteBook").push().getKey();
+            notebook.setId(id);
             FirebaseDatabase.getInstance().getReference().child("User").child(uid).child("Notebooks").child(id).setValue(notebook);
 
             Intent intent = new Intent(addbook.this, notebooks.class);

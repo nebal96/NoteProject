@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".notebook_row"></activity>
+        <activity android:name=".notes"></activity>
+        <activity android:name=".noteView" />
+        <activity
+            android:name=".notebookContent"
+            android:label="@string/title_activity_notebook_content"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".noteDetails" />
+        <activity android:name=".notebooksContent" />
+        <activity android:name=".notebook_row" />
         <activity android:name=".Note_row" />
         <activity android:name=".checkemail" />
         <activity android:name=".forgotpassword" />
@@ -27,7 +35,6 @@
         <activity android:name=".notesappdesign" />
         <activity android:name=".addbook" />
         <activity android:name=".notebooks" />
-        <activity android:name=".search" />
         <activity android:name=".MainActivity" />
     </application>
 

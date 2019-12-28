@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteVh> {
@@ -59,16 +61,22 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteVh> {
             note_title.setText(note.getTitle());
             note_desc.setText(note.getNote());
 
+            long last = note.getLastUpdate();
+            Date date=new Date(last);
+            SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yy");
+            String dateText = df2.format(date);
+            note_date.setText(dateText);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, note.getTitle(), Toast.LENGTH_SHORT).show();
-//                    Intent  intent = new Intent(itemView.getContext() ,NoteActivity.class);
-//                    intent.putExtra("id",note.getId());
-//                    intent.putExtra("title",note.getTitle());
-//                    intent.putExtra("note",note.getNote());
-//                    intent.putExtra("date",note.getDate());
-//                    itemView.getContext().startActivity(intent);
+                    Intent  intent = new Intent(itemView.getContext() ,noteView.class);
+                    intent.putExtra("id",note.getId());
+                    intent.putExtra("NotebookId",note.getNotebookId());
+                    intent.putExtra("note",note.getNote());
+                    intent.putExtra("lastUpdate",dateText);
+                    intent.putExtra("title",note.getTitle());
+                    itemView.getContext().startActivity(intent);
                 }
             });
         }
